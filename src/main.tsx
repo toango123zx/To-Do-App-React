@@ -1,9 +1,10 @@
 import './lib/i18n/i18n';
 
 import { StrictMode } from 'react';
+import { RouterProvider } from 'react-router';
 import { createRoot } from 'react-dom/client';
 
-import App from './App.tsx';
+import { router } from './routes';
 
 import './index.css';
 
@@ -15,6 +16,6 @@ function getRootElement(): HTMLElement {
 
 createRoot(getRootElement()).render(
 	<StrictMode>
-		<App />
+		<RouterProvider router={router} />
 	</StrictMode>,
 );
