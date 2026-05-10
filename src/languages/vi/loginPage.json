@@ -1,3 +1,13 @@
 {
-    "Login": "Đăng nhập"
+    "Login": "Đăng nhập",
+    "Email or Username": "Email hoặc tên đăng nhập",
+    "Password": "Mật khẩu",
+    "Hide password": "Ẩn mật khẩu",
+    "Show password": "Hiện mật khẩu",
+    "or": "hoặc",
+    "Google": "Google",
+    "Facebook": "Facebook",
+    "Don't have an account?": "Bạn chưa có tài khoản?",
+    "Sign up here": "Đăng ký tại đây",
+    "Login background": "Ảnh nền đăng nhập"
 }

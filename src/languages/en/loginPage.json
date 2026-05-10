@@ -1,3 +1,13 @@
 {
-    "Login": "Login"
+    "Login": "Login",
+    "Email or Username": "Email or Username",
+    "Password": "Password",
+    "Hide password": "Hide password",
+    "Show password": "Show password",
+    "or": "or",
+    "Google": "Google",
+    "Facebook": "Facebook",
+    "Don't have an account?": "Don't have an account?",
+    "Sign up here": "Sign up here",
+    "Login background": "Login background"
 }

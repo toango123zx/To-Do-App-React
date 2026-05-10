@@ -1,0 +1,4 @@
+:root {
+  --sys-radius-sm: var(--ref-radius-sm);
+  --sys-radius-md: var(--ref-radius-md);
+}

@@ -1,0 +1,8 @@
+:root[data-brand="organic"] {
+  --ref-color-brand-primary-400: #fef08a;
+  --ref-color-brand-primary-500: #facc15;
+  --ref-color-brand-primary-600: #eab308;
+  --ref-color-brand-primary-700: #ca8a04;
+
+  --sys-color-on-primary: #111111;
+}

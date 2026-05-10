@@ -1,0 +1,21 @@
+.dark,
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --sys-color-bg: var(--ref-color-neutral-900);
+  --sys-color-surface: var(--ref-color-neutral-charcoal);
+  --sys-color-surface-2: var(--ref-color-neutral-800);
+  --sys-color-surface-3: var(--ref-color-neutral-700);
+
+  --sys-color-fg: var(--ref-color-neutral-50);
+  --sys-color-fg-muted: var(--ref-color-neutral-400);
+
+  --sys-color-border: var(--ref-color-neutral-700);
+  --sys-color-border-hover: var(--ref-color-neutral-600);
+
+  --sys-color-input: var(--ref-color-neutral-700);
+  --sys-color-input-border: var(--ref-color-neutral-700);
+
+  /* Primary color variants for dark theme */
+  --sys-color-primary-hover: var(--ref-color-brand-primary-400);
+}

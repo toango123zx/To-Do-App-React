@@ -1,0 +1,6 @@
+:root {
+  --ref-radius-sm: 0.75rem;  /* 12px */
+  --ref-radius-md: 1rem;     /* 16px */
+  --ref-radius-lg: 1.25rem;  /* 20px */
+  --ref-radius-full: 9999px;
+}

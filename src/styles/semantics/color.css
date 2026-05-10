@@ -1,0 +1,37 @@
+:root {
+  /* ===== Surfaces ===== */
+  --sys-color-bg: var(--ref-color-neutral-100);
+  --sys-color-surface: var(--ref-color-neutral-light);
+  --sys-color-surface-2: var(--ref-color-neutral-0);
+  --sys-color-surface-3: var(--ref-color-neutral-50);
+
+  /* ===== Text ===== */
+  --sys-color-fg: var(--ref-color-neutral-900);
+  --sys-color-fg-muted: var(--ref-color-neutral-600);
+  --sys-color-fg-subtle: var(--ref-color-neutral-400);
+
+  /* ===== Border / Input ===== */
+  --sys-color-border: var(--ref-color-neutral-200);
+  --sys-color-border-hover: var(--ref-color-neutral-300);
+
+  --sys-color-input: var(--ref-color-neutral-50);
+  --sys-color-input-border: var(--ref-color-neutral-200);
+
+  /* ===== Primary ===== */
+  --sys-color-primary: var(--ref-color-brand-primary-500);
+  --sys-color-primary-hover: var(--ref-color-brand-primary-600);
+  --sys-color-primary-pressed: var(--ref-color-brand-primary-600);
+  --sys-color-primary-disabled: var(--ref-color-brand-primary-700);
+  --sys-color-on-primary: var(--ref-color-neutral-900); /* brand-black */
+
+  /* ===== Focus ring ===== */
+  --sys-color-ring: var(--sys-color-primary);
+  --sys-ring-width: 2px;
+  --sys-ring-offset: 2px;
+
+  /* ===== Status ===== */
+  --sys-color-success: var(--ref-color-status-success-600);
+  --sys-color-warning: var(--ref-color-status-warning-600);
+  --sys-color-danger: var(--ref-color-status-danger-600);
+  --sys-color-info: var(--ref-color-status-info-600);
+}
