@@ -73,3 +73,9 @@ export default defineConfig([
   },
 ]);
 ```
+## Design Previews
+
+View the design templates for this project:
+
+PC: https://app.uizard.io/templates/XXJOvmKW0jhEyYZdmA7w/preview
+Mobile: https://app.uizard.io/templates/aBYB4ZAAdbT5P79pYxEx/preview

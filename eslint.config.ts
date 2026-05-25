@@ -24,6 +24,7 @@ export default tseslint.config(
 			ecmaVersion: 2024,
 			sourceType: 'module',
 			globals: {
+				...globals.node,
 				...globals.browser,
 				...globals.es2024,
 			},
@@ -49,11 +50,20 @@ export default tseslint.config(
 			react: {
 				version: 'detect',
 			},
+			'import/resolver': {
+				typescript: {
+					project: './tsconfig.json',
+				},
+				node: true,
+			},
 		},
 		rules: {
 			...react.configs.recommended.rules,
 			...react.configs['jsx-runtime'].rules,
 			...reactHooks.configs.recommended.rules,
+			'react-hooks/exhaustive-deps': 'error',
+			'react/jsx-key': 'error',
+			'react/jsx-props-no-spreading': 'warn',
 
 			'react-refresh/only-export-components': [
 				'warn',
@@ -68,9 +78,27 @@ export default tseslint.config(
 			],
 			'react/jsx-boolean-value': ['error', 'never'],
 
-			'@typescript-eslint/explicit-function-return-type': 'off',
-			'@typescript-eslint/explicit-module-boundary-types': 'off',
+			// '@typescript-eslint/explicit-function-return-type': 'off',
+			'@typescript-eslint/explicit-function-return-type': [
+				'error',
+				{
+					allowExpressions: false,
+					allowTypedFunctionExpressions: false,
+					allowHigherOrderFunctions: false,
+				},
+			],
+
+			// '@typescript-eslint/explicit-module-boundary-types': 'off',
 			'@typescript-eslint/no-explicit-any': 'error',
+			'@typescript-eslint/explicit-module-boundary-types': 'error',
+
+			'@typescript-eslint/no-floating-promises': 'error',
+			'@typescript-eslint/no-misused-promises': 'error',
+
+			'@typescript-eslint/no-unsafe-assignment': 'error',
+			'@typescript-eslint/no-unsafe-member-access': 'error',
+			'@typescript-eslint/no-unsafe-call': 'error',
+
 			'@typescript-eslint/no-unused-vars': 'off',
 			'@typescript-eslint/consistent-type-imports': [
 				'error',
@@ -81,8 +109,8 @@ export default tseslint.config(
 			'@typescript-eslint/no-inferrable-types': 'warn',
 			'@typescript-eslint/prefer-optional-chain': 'error',
 			'@typescript-eslint/prefer-nullish-coalescing': 'warn',
-			'@typescript-eslint/no-floating-promises': 'off',
-			'@typescript-eslint/no-misused-promises': 'off',
+			// '@typescript-eslint/no-floating-promises': 'off',
+			// '@typescript-eslint/no-misused-promises': 'off',
 			'@typescript-eslint/ban-ts-comment': [
 				'error',
 				{
@@ -114,7 +142,23 @@ export default tseslint.config(
 					format: ['UPPER_CASE', 'PascalCase'],
 				},
 			],
-
+			'import/no-restricted-paths': [
+				'error',
+				{
+					zones: [
+						{
+							target: './src/components',
+							from: './src/services',
+							message: 'UI (components) must not import services directly.',
+						},
+						{
+							target: './src/pages',
+							from: './src/services',
+							message: 'UI (pages) must not import services directly.',
+						},
+					],
+				},
+			],
 			'unused-imports/no-unused-imports': 'error',
 			'unused-imports/no-unused-vars': [
 				'warn',
@@ -151,12 +195,11 @@ export default tseslint.config(
 			'prefer-const': 'error',
 			'no-var': 'error',
 			eqeqeq: ['error', 'always', { null: 'ignore' }],
-
 			'no-alert': 'warn',
 			'no-eval': 'error',
-			'no-implied-eval': 'error',
+			'@typescript-eslint/no-implied-eval': 'error',
 			'no-return-await': 'warn',
-			'require-await': 'warn',
+			'@typescript-eslint/require-await': 'warn',
 			'no-await-in-loop': 'warn',
 			'no-promise-executor-return': 'error',
 			'prefer-promise-reject-errors': 'error',
@@ -179,10 +222,14 @@ export default tseslint.config(
 			'no-nested-ternary': 'warn',
 			'no-duplicate-imports': 'off',
 			'import/no-duplicates': ['error', { 'prefer-inline': true }],
+			'import/no-cycle': 'error',
+			'import/no-default-export': 'warn',
+			'import/consistent-type-specifier-style': ['error', 'prefer-inline'],
+
 			'no-useless-rename': 'error',
 			'no-useless-computed-key': 'error',
 			'no-useless-concat': 'error',
-			'no-throw-literal': 'error',
+			'@typescript-eslint/only-throw-error': 'error',
 			'prefer-object-spread': 'error',
 			'prefer-rest-params': 'error',
 			'prefer-spread': 'error',
@@ -204,6 +251,50 @@ export default tseslint.config(
 					eventHandlerPropPrefix: 'on',
 				},
 			],
+			'no-restricted-syntax': [
+				'error',
+				{
+					selector: 'TSEnumDeclaration',
+					message: 'Use union types instead of enums.',
+				},
+			],
+		},
+	},
+	{
+		files: ['src/components/ui/**/*.{ts,tsx}'],
+		rules: {
+			'@typescript-eslint/explicit-function-return-type': 'off',
+			'@typescript-eslint/explicit-module-boundary-types': 'off',
+			'react/jsx-props-no-spreading': 'off',
+			'react-refresh/only-export-components': 'off',
+		},
+	},
+	{
+		files: ['vite.config.ts', 'eslint.config.ts', 'tailwind.config.js'],
+		rules: {
+			'import/no-default-export': 'off',
+			'@typescript-eslint/no-var-requires': 'off',
+		},
+	},
+	{
+		files: ['postcss.config.js', 'tailwind.config.js'],
+		languageOptions: {
+			parserOptions: {
+				projectService: false,
+			},
+		},
+		rules: {
+			'import/no-default-export': 'off',
+			'@typescript-eslint/no-floating-promises': 'off',
+			'@typescript-eslint/no-misused-promises': 'off',
+			'@typescript-eslint/no-unsafe-assignment': 'off',
+			'@typescript-eslint/no-unsafe-member-access': 'off',
+			'@typescript-eslint/no-unsafe-call': 'off',
+			'@typescript-eslint/prefer-optional-chain': 'off',
+			'@typescript-eslint/prefer-nullish-coalescing': 'off',
+			'@typescript-eslint/require-await': 'off',
+			'@typescript-eslint/no-implied-eval': 'off',
+			'@typescript-eslint/only-throw-error': 'off',
 		},
 	},
 

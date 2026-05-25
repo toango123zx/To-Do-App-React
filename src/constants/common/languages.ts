@@ -14,5 +14,3 @@ export const LANGUAGES: readonly ILanguage[] = [
 		country: 'Vietnam',
 	},
 ];
-
-export type TLanguageCode = (typeof LANGUAGES)[number]['code'];

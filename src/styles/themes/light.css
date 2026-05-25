@@ -1,0 +1,12 @@
+:root,
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  /* --sys-color-bg: var(--ref-color-neutral-50); */
+  /* --sys-color-surface: var(--ref-color-neutral-0); */
+  /* --sys-color-fg: var(--ref-color-neutral-900);
+  --sys-color-fg-muted: var(--ref-color-neutral-600); */
+
+  /* --sys-color-border: var(--ref-color-neutral-200);
+  --sys-color-input: var(--ref-color-neutral-0); */
+}

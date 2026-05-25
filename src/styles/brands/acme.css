@@ -1,0 +1,8 @@
+:root[data-brand="acme"] {
+  --ref-color-brand-primary-400: #bfdbfe;
+  --ref-color-brand-primary-500: #3b82f6;
+  --ref-color-brand-primary-600: #2563eb;
+  --ref-color-brand-primary-700: #1d4ed8;
+
+  --sys-color-on-primary: #ffffff;
+}

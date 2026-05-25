@@ -1,2 +1,41 @@
 @import "tailwindcss";
+
+@plugin "tailwindcss-animate";
+
 @import "tw-animate-css";
+@import "./styles/index.css";
+
+@custom-variant dark (&:is([data-theme="dark"] *));
+
+@config "../tailwind.config.js";
+
+/* @theme {
+  --color-regal-blue: #243c5a;
+} */
+
+@layer base {
+
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    border: 0 solid;
+    box-sizing: border-box;
+  }
+}
+
+/**
+ * Default styles for mobile devices
+ */
+html {
+  font-size: 16px;
+}
+
+/**
+ * Using CSS variables for theming
+ */
+body {
+  background-color: var(--sys-color-bg);
+  color: var(--sys-color-fg);
+}

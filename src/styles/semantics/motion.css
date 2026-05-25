@@ -1,0 +1,12 @@
+:root {
+  --sys-motion-fast: var(--ref-motion-fast);
+  --sys-motion-normal: var(--ref-motion-normal);
+  --sys-motion-ease: var(--ref-motion-ease);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --sys-motion-fast: 0ms;
+    --sys-motion-normal: 0ms;
+  }
+}

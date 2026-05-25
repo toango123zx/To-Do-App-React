@@ -1,0 +1,32 @@
+:root {
+  /* ===== Neutral scale (one source of truth) ===== */
+  --ref-color-neutral-0: #ffffff;
+  --ref-color-neutral-50: #f9fafb;
+  --ref-color-neutral-100: #f6f7f8;
+  --ref-color-neutral-200: #e5e7eb;
+  --ref-color-neutral-300: #d1d5db;
+  --ref-color-neutral-400: #9ca3af;
+  --ref-color-neutral-500: #6b7280;
+  --ref-color-neutral-600: #525252;
+  --ref-color-neutral-700: #404040;
+  --ref-color-neutral-800: #2d2d2d;
+  --ref-color-neutral-900: #1f1f1f;
+  --ref-color-neutral-950: #101922;
+  --ref-color-neutral-1000: #111111;
+  /* (optional) pure brand-black */
+
+  --ref-color-neutral-light: #E8E8E8;
+  --ref-color-neutral-charcoal: #333333;
+
+  /* ===== Brand palette (default) ===== */
+  --ref-color-brand-primary-400: #fef08a;
+  --ref-color-brand-primary-500: #facc15;
+  --ref-color-brand-primary-600: #eab308;
+  --ref-color-brand-primary-700: #ca8a04;
+
+  /* ===== Status ===== */
+  --ref-color-status-success-600: #22c55e;
+  --ref-color-status-warning-600: #f59e0b;
+  --ref-color-status-danger-600: #ef4444;
+  --ref-color-status-info-600: #3b82f6;
+}

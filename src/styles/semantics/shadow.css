@@ -1,0 +1,4 @@
+:root {
+  --sys-shadow-sm: var(--ref-shadow-sm);
+  --sys-shadow-md: var(--ref-shadow-md);
+}

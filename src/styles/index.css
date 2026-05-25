@@ -1,0 +1,29 @@
+/**
+ * ✅ Import order:
+ * 1) tokens (ref)
+ * 2) semantics (sys mapping)
+ * 3) themes (override sys)
+ * 4) brands (override ref + very limited sys)
+ */
+@import "./tokens/index.css";
+@import "./semantics/index.css";
+@import "./themes/index.css";
+@import "./brands/index.css";
+
+@layer base {
+  html {
+    font-family: var(--sys-font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background: var(--sys-color-bg);
+    color: var(--sys-color-fg);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--sys-color-fg);
+    outline-offset: 2px;
+  }
+}
